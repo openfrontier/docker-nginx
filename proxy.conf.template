@@ -1,6 +1,6 @@
 server {
     listen       80;
-    server_name  172.20.201.104;
+    server_name  {{HOST_URL}};
 
     location /{GERRIT_URI}/ {
         proxy_pass    http://{GERRIT_URI}:8080;

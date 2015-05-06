@@ -10,7 +10,8 @@ NGINX_NAME=${NGINX_NAME:-nginx-proxy}
 PROXY_CONF=proxy.conf
 
 # Setup proxy URI
-sed "s/{GERRIT_URI}/${GERRIT_NAME}/g" ~/nginx-docker/${PROXY_CONF}.template > ~/nginx-docker/${PROXY_CONF}
+sed "s/{{HOST_URL}}/${HOST_NAME}/g" ~/nginx-docker/${PROXY_CONF}.template > ~/nginx-docker/${PROXY_CONF}
+sed -i "s/{GERRIT_URI}/${GERRIT_NAME}/g" ~/nginx-docker/${PROXY_CONF}
 sed -i "s/{JENKINS_URI}/${JENKINS_NAME}/g" ~/nginx-docker/${PROXY_CONF}
 sed -i "s/{REDMINE_URI}/${REDMINE_NAME}/g" ~/nginx-docker/${PROXY_CONF}
 
