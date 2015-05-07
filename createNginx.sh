@@ -22,6 +22,6 @@ docker run \
 --link ${JENKINS_NAME}:${JENKINS_NAME} \
 --link ${REDMINE_NAME}:${REDMINE_NAME} \
 -p 80:80 \
--v ~/nginx-docker/${PROXY_CONF}:/etc/nginx/conf.d/proxy.conf:ro \
+-v ~/nginx-docker/${PROXY_CONF}:/etc/nginx/conf.d/default.conf:ro \
 -d ${NGINX_IMAGE_NAME}
 
