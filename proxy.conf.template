@@ -1,7 +1,7 @@
 server {
     listen       80;
     server_name  {{HOST_URL}};
-    client_max_body_size 200M;
+    client_max_body_size {{NGINX_MAX_UPLOAD_SIZE}};
 
     location / {
         root   /usr/share/nginx/html;
