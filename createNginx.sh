@@ -33,6 +33,7 @@ if [ ${#NEXUS_WEBURL} -eq 0 ]; then #proxy nexus
     --link ${NEXUS_NAME}:${NEXUS_NAME} \
     -p 80:80 \
     -v ~/nginx-docker/${PROXY_CONF}:/etc/nginx/conf.d/default.conf:ro \
+    -v ~/nginx-docker/directory.nexus.html:/usr/share/nginx/html/directory.html:ro \
     -d ${NGINX_IMAGE_NAME}
 else #without nexus
     docker run \
@@ -42,5 +43,6 @@ else #without nexus
     --link ${REDMINE_NAME}:${REDMINE_NAME} \
     -p 80:80 \
     -v ~/nginx-docker/${PROXY_CONF}:/etc/nginx/conf.d/default.conf:ro \
+    -v ~/nginx-docker/directory.html:/usr/share/nginx/html/directory.html:ro \
     -d ${NGINX_IMAGE_NAME}
 fi
