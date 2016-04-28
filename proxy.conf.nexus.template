@@ -5,7 +5,7 @@ server {
 
     location / {
         root   /usr/share/nginx/html;
-        index  directory.html;
+        index  index.html;
     }
 
     location /{GERRIT_URI}/ {
