@@ -9,6 +9,8 @@ NGINX_IMAGE_NAME=${NGINX_IMAGE_NAME:-nginx}
 NGINX_NAME=${NGINX_NAME:-proxy}
 NGINX_MAX_UPLOAD_SIZE=${NGINX_MAX_UPLOAD_SIZE:-200m}
 
+CI_NETWORK=${CI_NETWORK:-ci-network}
+
 PROXY_CONF=proxy.conf
 
 # Setup proxy URI
@@ -27,10 +29,7 @@ sed -i "s/{{NGINX_MAX_UPLOAD_SIZE}}/${NGINX_MAX_UPLOAD_SIZE}/g" ~/nginx-docker/$
 if [ ${#NEXUS_WEBURL} -eq 0 ]; then #proxy nexus
     docker run \
     --name ${NGINX_NAME} \
-    --link ${GERRIT_NAME}:${GERRIT_NAME} \
-    --link ${JENKINS_NAME}:${JENKINS_NAME} \
-    --link ${REDMINE_NAME}:${REDMINE_NAME} \
-    --link ${NEXUS_NAME}:${NEXUS_NAME} \
+    --net=${CI_NETWORK} \
     -p 80:80 \
     -v ~/nginx-docker/${PROXY_CONF}:/etc/nginx/conf.d/default.conf:ro \
     -v ~/nginx-docker/nginx-index.html:/usr/share/nginx/html/index.html:ro \
