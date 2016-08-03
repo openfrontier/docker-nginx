@@ -33,6 +33,7 @@ if [ ${#NEXUS_WEBURL} -eq 0 ]; then #proxy nexus
     -p 80:80 \
     -v ~/nginx-docker/${PROXY_CONF}:/etc/nginx/conf.d/default.conf:ro \
     -v ~/nginx-docker/nginx-index.html:/usr/share/nginx/html/index.html:ro \
+    --restart=unless-stopped \
     -d ${NGINX_IMAGE_NAME}
 else #without nexus
     docker run \
@@ -43,5 +44,6 @@ else #without nexus
     -p 80:80 \
     -v ~/nginx-docker/${PROXY_CONF}:/etc/nginx/conf.d/default.conf:ro \
     -v ~/nginx-docker/nginx-index.html:/usr/share/nginx/html/index.html:ro \
+    --restart=unless-stopped \
     -d ${NGINX_IMAGE_NAME}
 fi
