@@ -38,9 +38,7 @@ if [ ${#NEXUS_WEBURL} -eq 0 ]; then #proxy nexus
 else #without nexus
     docker run \
     --name ${NGINX_NAME} \
-    --link ${GERRIT_NAME}:${GERRIT_NAME} \
-    --link ${JENKINS_NAME}:${JENKINS_NAME} \
-    --link ${REDMINE_NAME}:${REDMINE_NAME} \
+    --net=${CI_NETWORK} \
     -p 80:80 \
     -v ~/nginx-docker/${PROXY_CONF}:/etc/nginx/conf.d/default.conf:ro \
     -v ~/nginx-docker/nginx-index.html:/usr/share/nginx/html/index.html:ro \
