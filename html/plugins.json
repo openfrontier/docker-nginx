@@ -18,13 +18,6 @@
                         "link": "/gerrit/"
                     },
                     {
-                        "id": "sonar",
-                        "title": "sonar",
-                        "img": "img/sonar.png",
-                        "description": "Static Code Analysis",
-                        "link": "/sonar/"
-                    },
-                    {
                         "id": "nexus",
                         "title": "nexus",
                         "img": "img/nexus.png",
@@ -32,43 +25,11 @@
                         "link": "/nexus/"
                     },
                     {
-                        "id": "kibana",
-                        "title": "kibana",
-                        "img": "img/kibana.png",
-                        "description": "Kibana Dashboard for Logging (ELK)",
-                        "link": "/app/kibana"
-                    },
-                    {
-                        "id": "selenium",
-                        "title": "selenium",
-                        "img": "img/selenium.png",
-                        "description": "Selenium Grid for Automated Testing",
-                        "link": "",
-                        "linkCreate": {
-                            "host": "selenium",
-                            "endPath": "//grid/console"
-                        }
-                    },
-                    {
-                        "id": "sensu",
-                        "title": "sensu",
-                        "img": "img/sensu.png",
-                        "description": "Monitoring",
-                        "link": "/sensu/"
-                    },
-                    {
-                        "id": "ldap-ltb",
-                        "title": "ltb",
-                        "img": "img/ltb.png",
+                        "id": "ldap-ssp",
+                        "title": "ldap-ssp",
+                        "img": "img/ldap-ssp.png",
                         "description": "Application that allows users to change their password in an LDAP directory",
-                        "link": "/ldap-ltb/"
-                    },
-                    {
-                        "id": "ldap-phpadmin",
-                        "title": "phpldapadmin",
-                        "img": "img/phpldapadmin.png",
-                        "description": "Browser to manage your LDAP server",
-                        "link": "/ldap-phpadmin/"
+                        "link": "/ldap-ssp/"
                     }
                 ]
             }
