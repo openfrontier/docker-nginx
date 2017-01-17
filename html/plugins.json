@@ -29,7 +29,7 @@
                         "title": "ldap-ssp",
                         "img": "img/ldap-ssp.png",
                         "description": "Application that allows users to change their password in an LDAP directory",
-                        "link": "/ldap-ssp/"
+                        "link": "/ssp/"
                     }
                 ]
             }
