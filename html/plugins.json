@@ -25,13 +25,6 @@
                         "link": "/nexus/"
                     },
                     {
-                        "id": "ldap-ssp",
-                        "title": "ldap-ssp",
-                        "img": "img/ldap-ssp.png",
-                        "description": "Application that allows users to change their password in an LDAP directory",
-                        "link": "/ssp/"
-                    },
-                    {
                         "id": "redmine",
                         "title": "redmine",
                         "img": "img/redmine.png",
